@@ -939,3 +939,16 @@
   }
 
 }
+.song-editor input,
+.song-editor select,
+.song-editor textarea {
+    color: #222 !important;
+    -webkit-text-fill-color: #222 !important;
+    caret-color: #5b4bdb !important;
+}
+
+.song-editor input::placeholder,
+.song-editor textarea::placeholder {
+    color: #888 !important;
+    -webkit-text-fill-color: #888 !important;
+}
