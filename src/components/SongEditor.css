@@ -939,16 +939,17 @@
   }
 
 }
-.song-editor input,
-.song-editor select,
-.song-editor textarea {
-    color: #222 !important;
-    -webkit-text-fill-color: #222 !important;
-    caret-color: #5b4bdb !important;
+/* Fix ONLY the three Song Information fields */
+.song-editor .song-information .field input,
+.song-editor .song-information .field select {
+    color: #222222 !important;
+    -webkit-text-fill-color: #222222 !important;
+    caret-color: #6554e8;
 }
 
-.song-editor input::placeholder,
-.song-editor textarea::placeholder {
-    color: #888 !important;
-    -webkit-text-fill-color: #888 !important;
+/* Placeholder text in Song Title */
+.song-editor .song-information .field input::placeholder {
+    color: #888888 !important;
+    -webkit-text-fill-color: #888888 !important;
+    opacity: 1;
 }
