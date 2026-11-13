@@ -1,0 +1,496 @@
+
+/* =========================================
+   HIRA MUSIC STUDIO - CHORD LIBRARY
+========================================= */
+
+.chord-library {
+  width: 100%;
+  min-height: 100vh;
+  padding: 35px;
+  color: #f5f3ff;
+  background: #100d1c;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.chord-library * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.chord-library-header {
+  margin-bottom: 25px;
+}
+
+.chord-library-header h1,
+.chord-library-header h2 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.chord-library-header p {
+  margin: 0;
+  color: #aaa2c0;
+  font-size: 14px;
+}
+
+/* SEARCH */
+
+.chord-search {
+  width: 100%;
+  max-width: 520px;
+  margin: 20px 0 25px;
+}
+
+.chord-search input {
+  width: 100%;
+  padding: 13px 15px;
+  color: #ffffff;
+  background: #211b33;
+  border: 1px solid #403657;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chord-search input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+
+.chord-search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.chord-result {
+  padding: 10px 15px;
+  color: #e9ddff;
+  background: #29213c;
+  border: 1px solid #493b62;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.chord-result:hover {
+  background: #49376d;
+  border-color: #a78bfa;
+  transform: translateY(-2px);
+}
+
+.chord-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* CHORD SELECTION */
+
+.chord-selection-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 250px));
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.chord-selection-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chord-selection-field label {
+  color: #c9c1dc;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chord-selection-field select {
+  width: 100%;
+  padding: 13px 15px;
+  color: #ffffff;
+  background: #211b33;
+  border: 1px solid #403657;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chord-selection-field select:focus {
+  border-color: #a78bfa;
+}
+
+/* SELECTED CHORD */
+
+.chord-result-header {
+  color: #ffffff;
+}
+
+.chord-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.chord-note {
+  min-width: 42px;
+  padding: 10px 13px;
+  text-align: center;
+  color: #ffffff;
+  background: #49376d;
+  border: 1px solid #7658a7;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* INSTRUMENT TABS */
+
+.instrument-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.instrument-tabs button {
+  padding: 11px 18px;
+  color: #cfc6e4;
+  background: #272039;
+  border: 1px solid #403657;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.instrument-tabs button:hover {
+  transform: translateY(-2px);
+  border-color: #a78bfa;
+}
+
+.instrument-tabs button.active {
+  color: #ffffff;
+  background: #7652c7;
+  border-color: #a78bfa;
+}
+
+/* INSTRUMENT VIEW */
+
+.instrument-view {
+  padding: 22px;
+  margin-bottom: 25px;
+  background: #1b172a;
+  border: 1px solid #37304a;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.instrument-view h3 {
+  margin: 0 0 20px;
+  color: #ffffff;
+}
+
+/* PIANO KEYBOARD */
+
+.piano-keyboard {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 650px;
+  height: 190px;
+  margin: 25px auto 10px;
+}
+
+.piano-keys {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.piano-white-key {
+  position: relative;
+  flex: 1;
+  height: 190px;
+  background: #f8f7fb;
+  border: 1px solid #b8b2c5;
+  border-radius: 0 0 6px 6px;
+}
+
+.piano-white-key.active-key {
+  background: #c4b5fd;
+}
+
+.piano-black-key {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 7%;
+  height: 115px;
+  background: #171321;
+  border: 1px solid #55476b;
+  border-radius: 0 0 5px 5px;
+}
+
+.piano-black-key.active-key {
+  background: #8b5cf6;
+}
+
+.piano-white-key.root-key,
+.piano-black-key.root-key {
+  outline: 3px solid #fbbf24;
+  outline-offset: -3px;
+}
+
+.piano-white-key span,
+.piano-black-key span {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.piano-white-key span {
+  color: #332c42;
+}
+
+.piano-black-key span {
+  color: #ffffff;
+}
+
+/* GUITAR DIAGRAM */
+
+.guitar-diagram {
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto;
+}
+
+.guitar-string-labels {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-bottom: 8px;
+  text-align: center;
+  color: #c7bdd9;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.guitar-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  min-height: 150px;
+  padding: 15px 5px;
+  background: #29213c;
+  border: 1px solid #65517f;
+  border-radius: 8px;
+}
+
+.guitar-string {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-left: 2px solid #c5b9d8;
+}
+
+.guitar-string:last-child {
+  border-right: 2px solid #c5b9d8;
+}
+
+.guitar-string-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #a99abf;
+  pointer-events: none;
+}
+
+.guitar-finger {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-top: 35px;
+  color: #ffffff;
+  background: #8b5cf6;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.guitar-caption {
+  margin-top: 12px;
+  color: #c7bdd9;
+  text-align: center;
+  font-size: 12px;
+}
+
+.guitar-unavailable {
+  padding: 20px;
+  color: #b8aecb;
+  text-align: center;
+  background: #211b33;
+  border-radius: 10px;
+}
+
+/* CHORD CATEGORIES */
+
+.chord-categories {
+  margin: 30px 0;
+}
+
+.chord-categories h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.chord-category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chord-category-grid button {
+  padding: 11px 17px;
+  color: #e8e1f5;
+  background: #29213c;
+  border: 1px solid #493b62;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.chord-category-grid button:hover {
+  background: #49376d;
+  transform: translateY(-2px);
+}
+
+.chord-category-grid button.selected {
+  color: #ffffff;
+  background: #7652c7;
+  border-color: #a78bfa;
+}
+
+/* USE CHORD BUTTON */
+
+.add-chord-to-song {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 20px;
+  color: #ffffff;
+  background: #8056d8;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.add-chord-to-song:hover {
+  background: #966eea;
+  transform: translateY(-2px);
+}
+
+.add-chord-to-song:active {
+  transform: scale(0.98);
+}
+
+/* EMPTY MESSAGE */
+
+.chord-empty-message {
+  padding: 20px;
+  color: #b8aecb;
+  background: #211b33;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+  .chord-library {
+    padding: 20px 14px;
+  }
+
+  .chord-library-header h1,
+  .chord-library-header h2 {
+    font-size: 24px;
+  }
+
+  .chord-selection-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .instrument-view {
+    padding: 15px;
+  }
+
+  .piano-keyboard,
+  .piano-white-key {
+    height: 145px;
+  }
+
+  .piano-black-key {
+    height: 90px;
+  }
+
+  .chord-category-grid button {
+    padding: 10px 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .chord-library {
+    padding: 16px 10px;
+  }
+
+  .instrument-tabs button {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .piano-keyboard {
+    height: 120px;
+  }
+
+  .piano-white-key {
+    height: 120px;
+  }
+
+  .piano-black-key {
+    height: 75px;
+  }
+}
+
+/* PRINT */
+
+@media print {
+  .chord-library {
+    color: #000000;
+    background: #ffffff;
+  }
+
+  .instrument-tabs,
+  .add-chord-to-song {
+    display: none;
+  }
+}

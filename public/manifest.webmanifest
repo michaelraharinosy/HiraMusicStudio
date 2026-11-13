@@ -1,0 +1,12 @@
+{
+  "name": "Hira Music Studio",
+  "short_name": "Hira Music",
+  "description": "Create, arrange and share Malagasy hymns and songs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101820",
+  "theme_color": "#101820",
+  "icons": [
+    { "src": "/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

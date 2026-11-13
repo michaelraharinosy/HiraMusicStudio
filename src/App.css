@@ -1,0 +1,295 @@
+
+/* =========================
+   HIRA MUSIC STUDIO
+   MAIN DESIGN
+========================= */
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #202334;
+  background: #f8f9fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  width: 100%;
+  min-height: 80px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeF3;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #6654d9;
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar nav a {
+  color: #646779;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+  color: #6654d9;
+}
+
+.login-btn {
+  padding: 12px 23px;
+  border: none;
+  border-radius: 9px;
+  background: #6654d9;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  padding: 105px 20px 110px;
+  text-align: center;
+  background: linear-gradient(135deg, #f0efff, #faf9ff, #edf5ff);
+}
+
+.welcome {
+  color: #6654d9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: #6654d9;
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 25px auto 32px;
+  color: #73778b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 15px 27px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-btn {
+  color: white;
+  background: #6654d9;
+  border: 1px solid #6654d9;
+}
+
+.secondary-btn {
+  color: #6654d9;
+  background: white;
+  border: 1px solid #dedaf8;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.login-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* MUSIC LIBRARIES */
+
+.libraries {
+  padding: 85px 7%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading p {
+  color: #6654d9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.library-card {
+  padding: 32px;
+  background: white;
+  border: 1px solid #ebebf2;
+  border-radius: 17px;
+  box-shadow: 0 8px 30px rgba(30, 30, 60, 0.04);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.library-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(30, 30, 60, 0.09);
+}
+
+.library-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #f0efff;
+  color: #6654d9;
+  border-radius: 14px;
+  font-size: 29px;
+  margin-bottom: 23px;
+}
+
+.library-card h3 {
+  font-size: 22px;
+  margin-bottom: 13px;
+}
+
+.library-card p {
+  color: #777b8d;
+  line-height: 1.7;
+  min-height: 82px;
+  font-size: 14px;
+}
+
+.library-card button {
+  margin-top: 22px;
+  padding: 0;
+  color: #6654d9;
+  background: none;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 28px 15px;
+  text-align: center;
+  background: #202334;
+  color: #c4c6d2;
+  font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+  .navbar {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero {
+    padding: 75px 20px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .libraries {
+    padding: 60px 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+}
